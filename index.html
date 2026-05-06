@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BEATKONDUCTAZ | Golden Era</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:Inter,sans-serif;
+  background:#000;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* CINEMATIC BACKGROUND */
+.bg{
+  position:fixed;
+  inset:0;
+  background:url('https://images.unsplash.com/photo-1520694478160-64c4b5b1f2b0') center/cover;
+  filter:brightness(0.3);
+  z-index:-2;
+}
+
+.overlay{
+  position:fixed;
+  inset:0;
+  background:radial-gradient(circle,rgba(0,0,0,0.4),rgba(0,0,0,0.95));
+  z-index:-1;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  padding:15px 20px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  z-index:10;
+}
+
+nav h1{
+  font-family:"Bebas Neue";
+  letter-spacing:2px;
+  color:#e10600;
+}
+
+nav a{
+  color:#fff;
+  margin-left:15px;
+  text-decoration:none;
+  font-size:13px;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+.hero h1{
+  font-family:"Bebas Neue";
+  font-size:4rem;
+  letter-spacing:2px;
+  animation:fadeUp 1.5s ease;
+}
+
+.hero h2{
+  color:#e10600;
+  margin-top:10px;
+  animation:fadeUp 2s ease;
+}
+
+.hero p{
+  margin-top:15px;
+  background:rgba(0,0,0,0.6);
+  padding:10px 15px;
+  border-left:3px solid #e10600;
+  animation:fadeUp 2.2s ease;
+}
+
+/* SECTIONS */
+section{
+  padding:60px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.title{
+  font-size:1.8rem;
+  border-left:4px solid #e10600;
+  padding-left:10px;
+  margin-bottom:25px;
+  font-family:"Bebas Neue";
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:15px;
+}
+
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:15px;
+  text-align:center;
+  border:1px solid #222;
+  transition:.3s;
+}
+
+.card:hover{
+  border-color:#e10600;
+  transform:translateY(-5px);
+}
+
+/* VIDEO */
+.video iframe{
+  width:100%;
+  height:200px;
+}
+
+/* INSTAGRAM GRID */
+.ig-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
+.ig-grid div{
+  background:#111;
+  height:160px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:12px;
+  color:#777;
+  border:1px solid #222;
+}
+
+/* EVENT BLOCK */
+.event{
+  border:1px solid #e10600;
+  padding:20px;
+  background:rgba(0,0,0,0.6);
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* MOBILE FIXES */
+@media(max-width:600px){
+  .hero h1{font-size:2.8rem;}
+  nav{flex-direction:column;gap:10px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+<div class="overlay"></div>
+
+<nav>
+  <h1>BEATKONDUCTAZ</h1>
+  <div>
+    <a href="#lineup">LINEUP</a>
+    <a href="#media">MEDIA</a>
+    <a href="#ig">IG</a>
+    <a href="#event">EVENT</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>BEATKONDUCTAZ</h1>
+  <h2>GOLDEN ERA</h2>
+  <p>Sunday June 21 • 12PM – 6PM</p>
+</div>
+
+<section id="event">
+  <div class="event">
+    📍 Wishing Wellness Cannabis Dispensary<br>
+    406 5th St NW, Washington DC<br><br>
+    Indoor / Outdoor Producer Showcase
+  </div>
+</section>
+
+<section id="lineup">
+  <div class="title">PRODUCERS SHOWCASE</div>
+  <div class="grid">
+    <div class="card">1st Spawned</div>
+    <div class="card">Theory</div>
+    <div class="card">Mental Da God</div>
+    <div class="card">Krayola</div>
+    <div class="card">Grussle</div>
+    <div class="card">Choppy Chop</div>
+    <div class="card">Slim Kat</div>
+    <div class="card">DJ R.B.I.</div>
+  </div>
+</section>
+
+<section id="media">
+  <div class="title">BEATKONDUCTAZ TV</div>
+
+  <div class="video">
+    <iframe src="https://www.youtube.com/embed/F_1FEujN3VY"></iframe>
+  </div>
+
+  <div class="video">
+    <iframe src="https://youtu.be/kCmhVy60fO8"></iframe>
+  </div>
+
+  <div class="video">
+    <iframe src="https://youtu.be/qOBSDU4J4rM"></iframe>
+  </div>
+</section>
+
+<section id="ig">
+  <div class="title">INSTAGRAM MOMENTS</div>
+
+  <div class="ig-grid">
+    <div>Instagram Post Slot</div>
+    <div>Instagram Post Slot</div>
+    <div>Instagram Post Slot</div>
+    <div>Instagram Post Slot</div>
+  </div>
+
+  <p style="margin-top:10px;color:#888;font-size:12px;">
+    Replace these with real IG image URLs from @beatkonductaz
+  </p>
+</section>
+
+<section>
+  <div class="title">CONNECT</div>
+  <p>@beatkonductaz</p>
+  <p>Facebook: @beatkonductaz</p>
+  <p>beatkonductaz@gmail.com</p>
+</section>
+
+</body>
+</html>
