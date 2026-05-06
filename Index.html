@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>BeatKonductaz | Golden Era Experience</title>
+  <!-- Google Fonts + modern font stack -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,500;14..32,700;14..32,800&family=Space+Grotesk:wght@400;500;600;700&family=Righteous&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: radial-gradient(circle at 10% 20%, #0b0b0f, #000000);
+      font-family: 'Inter', 'Space Grotesk', sans-serif;
+      color: #f0ede8;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    /* custom neon / golden glow */
+    .glow-text {
+      text-shadow: 0 0 8px rgba(212, 175, 55, 0.7), 0 0 16px rgba(212, 175, 55, 0.4);
+    }
+
+    /* modern scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1a1a1a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #e63946;
+      border-radius: 10px;
+    }
+
+    /* HERO SECTION — vibrant poster vibe */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.85) 100%), 
+                  url('https://placehold.co/1200x800/1e1e2f/d4af37?text=GOLDEN+ERA+VIBE') no-repeat center center/cover;
+      /* fallback poster-like gradient + texture */
+      background-blend-mode: overlay;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      border-bottom: 4px solid #e63946;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.8);
+    }
+
+    /* "poster" image area – we embed the image you provided using inline style? it will match poster colors */
+    /* to truly reflect the poster, we use background image from the given image (I'll use a dynamic gradient plus a placeholder but we set image from your uploaded asset?) */
+    /* Because this is code only — to match your poster exactly we use bold yellow+red+black palette + grunge */
+    .hero {
+      background-image: linear-gradient(107deg, rgba(0,0,0,0.75), rgba(230,57,70,0.25)), url('https://placehold.co/1600x900/1a1208/e6b422?text=BEAT+KONDUCTAZ+POSTER');
+      background-size: cover;
+      background-position: center 30%;
+    }
+
+    /* dynamic overlay pulse animation for exclusivity */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(45deg, rgba(230,57,70,0.08) 0px, rgba(230,57,70,0.08) 2px, transparent 2px, transparent 8px);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      padding: 2rem;
+      z-index: 2;
+      backdrop-filter: blur(2px);
+    }
+
+    .hero h1 {
+      font-family: 'Righteous', 'Inter', cursive;
+      font-size: clamp(3rem, 12vw, 6rem);
+      background: linear-gradient(135deg, #FFD966, #E6B422, #FFB347);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: 0.05em;
+      text-shadow: 0 0 20px rgba(230, 57, 70, 0.5);
+      margin-bottom: 0.25rem;
+    }
+
+    .hero h2 {
+      font-size: clamp(1.4rem, 5vw, 2.2rem);
+      font-weight: 600;
+      color: #f5c542;
+      border-bottom: 2px dashed #e63946;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      font-weight: 500;
+      background: rgba(0,0,0,0.6);
+      display: inline-block;
+      padding: 0.5rem 1.8rem;
+      border-radius: 40px;
+      backdrop-filter: blur(8px);
+      margin-bottom: 2rem;
+    }
+
+    .btn-modern {
+      background: linear-gradient(95deg, #e63946, #b91c2c);
+      border: none;
+      padding: 14px 38px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #FFECB3;
+      border-radius: 60px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 6px 18px rgba(230,57,70,0.5);
+      text-decoration: none;
+      font-family: inherit;
+    }
+
+    .btn-modern i {
+      font-size: 1.2rem;
+      transition: transform 0.2s;
+    }
+
+    .btn-modern:hover {
+      transform: translateY(-4px);
+      background: linear-gradient(95deg, #d62839, #a41623);
+      box-shadow: 0 15px 25px -6px rgba(230,57,70,0.7);
+      color: white;
+    }
+
+    .btn-modern:hover i {
+      transform: translateX(5px);
+    }
+
+    /* section styling — vibrant exclusive cards */
+    .section {
+      padding: 70px 24px;
+      max-width: 1300px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .section-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 2.5rem;
+      position: relative;
+      display: inline-block;
+      background: linear-gradient(135deg, #FFD966, #e63946);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 70%;
+      height: 4px;
+      background: #e63946;
+      border-radius: 4px;
+    }
+
+    /* lineup grid - fresh & energetic */
+    .lineup-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 28px;
+      margin-top: 30px;
+    }
+
+    .artist-card {
+      background: rgba(20, 20, 28, 0.85);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      border-radius: 28px;
+      padding: 28px 12px;
+      text-align: center;
+      transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      box-shadow: 0 12px 22px -12px rgba(0,0,0,0.5);
+      cursor: default;
+    }
+
+    .artist-card i {
+      font-size: 2.2rem;
+      color: #e6b422;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .artist-card h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      margin: 10px 0 0;
+      background: linear-gradient(145deg, #f5e7c8, #e6b422);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .artist-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      border-color: #e63946;
+      box-shadow: 0 20px 30px -10px rgba(230,57,70,0.4);
+      background: #14141c;
+    }
+
+    /* detail card event exclusive */
+    .event-highlight {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-between;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(10px);
+      border-radius: 48px;
+      padding: 2.5rem;
+      margin-top: 20px;
+      border-left: 6px solid #e63946;
+      border-right: 2px solid #d4af37;
+    }
+
+    .event-detail-item {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    .event-detail-item i {
+      font-size: 2.5rem;
+      color: #e6b422;
+    }
+
+    .special-guest {
+      text-align: center;
+      margin: 45px 0 20px 0;
+      background: linear-gradient(115deg, #1a0f0f, #241212);
+      padding: 40px 20px;
+      border-radius: 64px;
+      border: 1px solid rgba(230,57,70,0.6);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .special-guest::after {
+      content: "⭐ EXCLUSIVE ⭐";
+      position: absolute;
+      top: 15px;
+      right: -20px;
+      background: #d4af37;
+      color: black;
+      font-weight: bold;
+      padding: 5px 35px;
+      font-size: 0.75rem;
+      transform: rotate(35deg);
+      letter-spacing: 2px;
+      font-family: monospace;
+    }
+
+    .guest-name {
+      font-size: 3.5rem;
+      font-weight: 800;
+      font-family: 'Righteous', cursive;
+      background: linear-gradient(135deg, #F9D160, #E6A017);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: 2px;
+    }
+
+    .tagline {
+      font-size: 1.5rem;
+      color: #f7c56e;
+    }
+
+    /* sponsors area hip */
+    .sponsor-area {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 45px;
+      background: #0a0a0e;
+      border-radius: 70px;
+      padding: 2rem 2rem;
+      margin-top: 25px;
+      border: 1px solid #d4af3740;
+    }
+
+    .sponsor-item {
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .sponsor-logo {
+      background: #181818;
+      padding: 14px 28px;
+      border-radius: 60px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #f0c45a;
+      border: 1px solid #e63946;
+      transition: 0.2s;
+    }
+
+    /* footer fresh */
+    .footer-modern {
+      background: #030303;
+      text-align: center;
+      padding: 45px 20px;
+      margin-top: 2rem;
+      border-top: 2px solid #d4af37;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+    }
+
+    .social-icons {
+      margin-bottom: 18px;
+    }
+    .social-icons a {
+      color: #e6b422;
+      margin: 0 15px;
+      font-size: 1.6rem;
+      transition: 0.2s;
+      display: inline-block;
+    }
+    .social-icons a:hover {
+      color: #e63946;
+      transform: scale(1.2);
+    }
+
+    /* exclusive vibe neon pulse */
+    @keyframes pulseExclusive {
+      0% { text-shadow: 0 0 2px #e63946; }
+      100% { text-shadow: 0 0 12px #e6b422; }
+    }
+
+    .exclusive-badge {
+      background: #e63946;
+      display: inline-block;
+      padding: 6px 20px;
+      font-size: 0.7rem;
+      font-weight: bold;
+      border-radius: 40px;
+      letter-spacing: 1px;
+      color: #FFE8C5;
+      margin-bottom: 16px;
+    }
+
+    /* MAP style */
+    .location-block {
+      display: flex;
+      gap: 20px;
+      background: #14141c;
+      border-radius: 36px;
+      padding: 28px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .loc-icon {
+      font-size: 3rem;
+    }
+
+    @media (max-width: 700px) {
+      .hero h1 { font-size: 3rem; }
+      .section-title { font-size: 2rem; }
+      .guest-name { font-size: 2rem; }
+      .event-highlight { flex-direction: column; }
+      .artist-card h3 { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero" id="home">
+  <div class="hero-content">
+    <div class="exclusive-badge"><i class="fas fa-crown"></i> LIMITED CAPACITY • RSVP EXCLUSIVE</div>
+    <h1>BEATKONDUCTAZ</h1>
+    <h2>OF THE GOLDEN ERA</h2>
+    <p><i class="fas fa-calendar-alt"></i> SUNDAY AFTERNOON JUNE 21 | 12PM – 6PM</p>
+    <a href="#event-details" class="btn-modern"><i class="fas fa-ticket-alt"></i> SECURE YOUR SPOT</a>
+  </div>
+</div>
+
+<!-- EVENT DETAILS SECTION -->
+<div id="event-details" class="section">
+  <h2 class="section-title"><i class="fas fa-microphone-alt"></i> THE EXPERIENCE</h2>
+  <div class="event-highlight">
+    <div class="event-detail-item"><i class="fas fa-store"></i> <span><strong>Wishing Wellness</strong><br>406 5th St NW, Washington DC</span></div>
+    <div class="event-detail-item"><i class="fas fa-sun"></i> <span><strong>Indoor / Outdoor</strong><br>Producer Showcase | Open Vibes</span></div>
+    <div class="event-detail-item"><i class="fas fa-vinyl"></i> <span><strong>Golden Era Beat Cypher</strong><br>Live beats + special sets</span></div>
+  </div>
+  <div class="location-block" style="margin-top: 28px;">
+    <div class="loc-icon"><i class="fas fa-map-pin" style="color:#e63946"></i></div>
+    <div><strong style="font-size: 1.3rem;">📍 Wishing Wellness Dispensary</strong><br>406 5th St NW, Washington, DC 20001<br><span style="font-size:0.8rem; opacity:0.7;">(Safe, curated, 21+ event – bring valid ID)</span></div>
+    <div style="margin-left: auto;"><i class="fas fa-wheelchair"></i> Accessible</div>
+  </div>
+</div>
+
+<!-- LINEUP SECTION – MODERN GRID + EXCLUSIVE ENERGY -->
+<div class="section">
+  <h2 class="section-title"><i class="fas fa-head-side-headphones"></i> THE CONDUCTAZ</h2>
+  <div class="lineup-grid">
+    <div class="artist-card"><i class="fas fa-drumstick-bite"></i><h3>1st Spawned</h3></div>
+    <div class="artist-card"><i class="fas fa-waveform"></i><h3>Theory</h3></div>
+    <div class="artist-card"><i class="fas fa-brain"></i><h3>Mental Da God</h3></div>
+    <div class="artist-card"><i class="fas fa-palette"></i><h3>Krayola</h3></div>
+    <div class="artist-card"><i class="fas fa-guitar"></i><h3>Grussle</h3></div>
+    <div class="artist-card"><i class="fas fa-cut"></i><h3>Choppy Chop</h3></div>
+    <div class="artist-card"><i class="fas fa-cat"></i><h3>Slim Kat</h3></div>
+    <div class="artist-card"><i class="fas fa-turntable"></i><h3>DJ R.B.I.</h3></div>
+  </div>
+</div>
+
+<!-- SPECIAL APPEARANCE / EXCLUSIVE GUEST + LIVE ART -->
+<div class="section">
+  <div class="special-guest">
+    <div class="exclusive-badge" style="background: #d4af37; color:#000;"><i class="fas fa-star-of-life"></i> LEGENDARY APPEARANCE</div>
+    <div class="guest-name">Toney Smith</div>
+    <p class="tagline"><i class="fas fa-microphone"></i> Live Performance • Special Set</p>
+    <div style="margin-top: 25px; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+      <span><i class="fas fa-paintbrush"></i> Live Art by <strong style="color:#e6b422;">SCENE</strong></span>
+      <span><i class="fas fa-chalkboard-user"></i> Hosted by <strong style="color:#e6b422;">Brother LOS</strong></span>
+    </div>
+    <div style="margin-top: 28px;">
+      <i class="fas fa-gem" style="color:#e63946;"></i> “The Golden Era never faded — it evolved.”
+    </div>
+  </div>
+</div>
+
+<!-- SPONSORS + RECORDS SECTION with exclusive flavor -->
+<div class="section">
+  <h2 class="section-title"><i class="fas fa-handshake"></i> POWERED BY</h2>
+  <div class="sponsor-area">
+    <div class="sponsor-item"><div class="sponsor-logo"><i class="fas fa-record-vinyl"></i> Rhythm Lingo Records</div><span style="font-size:0.75rem;">est. 2024</span></div>
+    <div class="sponsor-item"><div class="sponsor-logo"><i class="fas fa-leaf"></i> Wishing Wellness</div><span style="font-size:0.75rem;">Cannabis Dispensary</span></div>
+    <div class="sponsor-item"><div class="sponsor-logo"><i class="fas fa-headphones"></i> Golden Era Society</div></div>
+  </div>
+  <p style="text-align: center; margin-top: 32px; font-weight: 300; font-size:1rem;">🏆 Exclusive producers showcase · Beat battles · Limited edition merch available</p>
+</div>
+
+<!-- extra section: exclusivity + golden era manifesto -->
+<div class="section" style="background: linear-gradient(145deg, #0b0202, #110a05); border-radius: 80px; margin: 20px auto; width: calc(100% - 40px);">
+  <div style="text-align: center; padding: 20px;">
+    <i class="fas fa-crown" style="font-size: 3rem; color: #e6b422;"></i>
+    <h3 style="font-size: 2rem; font-weight: 800; margin: 12px 0;">THE BEATKONDUCTAZ MOVEMENT</h3>
+    <p style="max-width: 700px; margin: 0 auto; font-size: 1.1rem; line-height: 1.5;">This is more than an event — it's a congregation of beat architects and golden-era purists. Dusty samples, hard-hitting drums, and raw energy. Step into the cipher, feel the MPC legacy, and witness the future of boom-bap. Only 200 tickets available. <strong style="color:#e63946;">No cap — authentic hip hop royalty.</strong></p>
+    <div style="margin: 35px 0 0;">
+      <a href="#" class="btn-modern" style="background: #d4af37; color: black; box-shadow: none;"><i class="fab fa-instagram"></i> JOIN WAITLIST</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER with modern social links and exclusive vibe -->
+<div class="footer-modern">
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-soundcloud"></i></a>
+    <a href="#"><i class="fab fa-bandcamp"></i></a>
+  </div>
+  <p><i class="fas fa-copyright"></i> 2025 BeatKonductaz — Rhythm Lingo Records. The Golden Era Lives.</p>
+  <p style="margin-top: 12px; font-size: 0.8rem;">📍 Indoor/outdoor event • All ages welcome with guardian? No, 21+ (valid ID) • Bass heavy experience.</p>
+  <p style="margin-top: 20px;"><i class="fas fa-ticket-alt"></i> Exclusive presale link: <span style="color:#e6b422;">@BeatKonductazDC</span></p>
+</div>
+
+<!-- smooth scroll & interactive exclusive element -->
+<script>
+  // Add smooth scroll for anchor links + modern interactive feel
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      if (targetId === '') return;
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // optional: add a pulse highlight effect to reflect excitement
+        targetElement.style.transition = '0.2s';
+        targetElement.style.filter = 'drop-shadow(0 0 6px #e63946)';
+        setTimeout(() => { targetElement.style.filter = ''; }, 800);
+      }
+    });
+  });
+
+  // tiny interactive hover exclusive badge effect
+  const exclusiveBadges = document.querySelectorAll('.exclusive-badge');
+  exclusiveBadges.forEach(b => {
+    b.addEventListener('mouseenter', () => {
+      b.style.transform = 'scale(1.05)';
+      b.style.transition = '0.2s';
+    });
+    b.addEventListener('mouseleave', () => {
+      b.style.transform = 'scale(1)';
+    });
+  });
+
+  // dynamic "poster match" color shift: we already used gradient approach that echoes all golden/red/black glam
+  console.log("🔥 BeatKonductaz — Golden Era exclusive experience loaded");
+</script>
+
+<!-- Note: Since I cannot embed your exact image file directly in the code due to environment constraints, but I've set up the background & hero using a placeholder that mimics poster style. However, to fully match your poster, you can replace the background-image URL in .hero background-image with the path to your actual uploaded poster image. The colors, neon glow, card style and gradient already reflect the exciting red, gold, and exclusive energy of the flyer. -->
+</body>
+      </html>
