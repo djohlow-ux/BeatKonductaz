@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>BEATKONDUCTAZ | Golden Era Trailer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  background:#000;
+  color:#fff;
+  font-family:Inter,sans-serif;
+  overflow-x:hidden;
+}
+
+/* CINEMATIC BACKGROUND */
+.bg{
+  position:fixed;
+  inset:0;
+  background:url('https://images.unsplash.com/photo-1520694478160-64c4b5b1f2b0') center/cover;
+  filter:brightness(0.25) contrast(1.1);
+  z-index:-3;
+  animation:slowZoom 20s infinite alternate ease-in-out;
+}
+
+@keyframes slowZoom{
+  from{transform:scale(1);}
+  to{transform:scale(1.1);}
+}
+
+.overlay{
+  position:fixed;
+  inset:0;
+  background:radial-gradient(circle,rgba(0,0,0,0.3),rgba(0,0,0,0.96));
+  z-index:-2;
+}
+
+/* film grain */
+.grain{
+  position:fixed;
+  inset:0;
+  background:url('https://grainy-gradients.vercel.app/noise.svg');
+  opacity:0.08;
+  z-index:0;
+  pointer-events:none;
+}
+
+/* HERO TRAILER */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+  position:relative;
+}
+
+.hero h1{
+  font-family:"Bebas Neue";
+  font-size:5rem;
+  letter-spacing:3px;
+  animation:glitch 2.5s infinite;
+}
+
+.hero h2{
+  color:#e10600;
+  margin-top:10px;
+  letter-spacing:2px;
+  animation:fadeUp 1.5s ease;
+}
+
+.hero p{
+  margin-top:15px;
+  background:rgba(0,0,0,0.6);
+  padding:10px 15px;
+  border-left:4px solid #e10600;
+  animation:fadeUp 2s ease;
+}
+
+/* GLITCH EFFECT */
+@keyframes glitch{
+  0%{transform:translate(0);}
+  20%{transform:translate(-2px,2px);}
+  40%{transform:translate(2px,-2px);}
+  60%{transform:translate(-1px,1px);}
+  80%{transform:translate(1px,-1px);}
+  100%{transform:translate(0);}
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* SECTION BASE */
+section{
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
+  opacity:0;
+  transform:translateY(30px);
+  animation:fadeIn 1s forwards;
+}
+
+section:nth-child(odd){animation-delay:.2s;}
+section:nth-child(even){animation-delay:.4s;}
+
+@keyframes fadeIn{
+  to{opacity:1;transform:translateY(0);}
+}
+
+.title{
+  font-family:"Bebas Neue";
+  font-size:2.4rem;
+  border-left:4px solid #e10600;
+  padding-left:12px;
+  margin-bottom:25px;
+}
+
+/* EVENT CARD */
+.event{
+  border:1px solid #e10600;
+  padding:25px;
+  background:rgba(0,0,0,0.6);
+  line-height:1.6;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:12px;
+}
+
+.card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid #222;
+  padding:15px;
+  text-align:center;
+  transition:.3s;
+}
+
+.card:hover{
+  border-color:#e10600;
+  transform:translateY(-5px);
+}
+
+/* VIDEO */
+.video iframe{
+  width:100%;
+  height:260px;
+  margin-bottom:18px;
+  border:none;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* IG STYLE LINKS */
+.ig-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:12px;
+}
+
+.ig{
+  background:#111;
+  border:1px solid #222;
+  padding:18px;
+  transition:.3s;
+}
+
+.ig:hover{
+  border-color:#e10600;
+  transform:scale(1.02);
+}
+
+.ig a{
+  color:#e10600;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* FLOATING LIGHT STRIP */
+.lightbar{
+  height:2px;
+  width:100%;
+  background:linear-gradient(90deg,transparent,#e10600,transparent);
+  animation:scan 3s infinite linear;
+  margin:40px 0;
+}
+
+@keyframes scan{
+  from{transform:translateX(-100%);}
+  to{transform:translateX(100%);}
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .hero h1{font-size:3rem;}
+  .video iframe{height:200px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+<div class="overlay"></div>
+<div class="grain"></div>
+
+<!-- HERO TRAILER -->
+<div class="hero">
+  <h1>BEATKONDUCTAZ</h1>
+  <h2>GOLDEN ERA EXPERIENCE</h2>
+  <p>SUNDAY JUNE 21 • 12PM–6PM</p>
+</div>
+
+<div class="lightbar"></div>
+
+<!-- EVENT -->
+<section>
+  <div class="title">THE EXPERIENCE</div>
+  <div class="event">
+    📍 Wishing Wellness Cannabis Dispensary<br>
+    406 5th St NW, Washington DC<br><br>
+    Indoor / Outdoor Producer Showcase<br>
+    A live sonic film of beats, culture & energy.
+  </div>
+</section>
+
+<!-- PRODUCERS -->
+<section>
+  <div class="title">PRODUCERS SHOWCASE</div>
+  <div class="grid">
+    <div class="card">1st Spawned</div>
+    <div class="card">Theory</div>
+    <div class="card">Mental Da God</div>
+    <div class="card">Krayola</div>
+    <div class="card">Grussle</div>
+    <div class="card">Choppy Chop</div>
+    <div class="card">Slim Kat</div>
+    <div class="card">DJ R.B.I.</div>
+  </div>
+</section>
+
+<!-- MEDIA TRAILER -->
+<section>
+  <div class="title">TRAILER ARCHIVE</div>
+
+  <div class="video">
+    <iframe src="https://www.youtube.com/embed/F_1FEujN3VY" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/qOBSDU4J4rM" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/kCmhVy60fO8" allowfullscreen></iframe>
+  </div>
+</section>
+
+<!-- IG LINKS -->
+<section>
+  <div class="title">SOCIAL VISUALS</div>
+
+  <div class="ig-grid">
+    <div class="ig"><a href="https://www.instagram.com/reel/DX4SeSlOU2F/">Reel 01</a></div>
+    <div class="ig"><a href="https://www.instagram.com/reel/ClEmiYrJpA4/">Reel 02</a></div>
+    <div class="ig"><a href="https://www.instagram.com/reel/Ck_7_1rs2tp/">Reel 03</a></div>
+    <div class="ig"><a href="https://www.instagram.com/reel/ClPjz18MbCw/">Reel 04</a></div>
+  </div>
+</section>
+
+<!-- FOOTER ENERGY -->
+<section>
+  <div class="title">BEATKONDUCTAZ</div>
+  <p>Beats. Culture. Community. The Golden Era Lives.</p>
+</section>
+
+</body>
+</html>
