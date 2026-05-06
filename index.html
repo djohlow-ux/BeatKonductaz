@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BEATKONDUCTAZ | Golden Era</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:Inter,sans-serif;
+  background:#000;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+.bg{
+  position:fixed;
+  inset:0;
+  background:url('https://images.unsplash.com/photo-1520694478160-64c4b5b1f2b0') center/cover;
+  filter:brightness(0.25);
+  z-index:-2;
+}
+
+.overlay{
+  position:fixed;
+  inset:0;
+  background:radial-gradient(circle,rgba(0,0,0,0.3),rgba(0,0,0,0.95));
+  z-index:-1;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+.hero h1{
+  font-family:"Bebas Neue";
+  font-size:4rem;
+  letter-spacing:2px;
+}
+
+.hero h2{
+  color:#e10600;
+  margin-top:10px;
+}
+
+.hero p{
+  margin-top:15px;
+  background:rgba(0,0,0,0.6);
+  padding:10px 15px;
+  border-left:4px solid #e10600;
+}
+
+/* SECTIONS */
+.section{
+  padding:70px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.title{
+  font-family:"Bebas Neue";
+  font-size:2.2rem;
+  border-left:4px solid #e10600;
+  padding-left:12px;
+  margin-bottom:25px;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:12px;
+}
+
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:15px;
+  text-align:center;
+  border:1px solid #222;
+  transition:.3s;
+}
+
+.card:hover{
+  border-color:#e10600;
+  transform:translateY(-5px);
+}
+
+/* EVENT */
+.event{
+  border:1px solid #e10600;
+  padding:25px;
+  background:rgba(0,0,0,0.6);
+}
+
+/* VIDEO */
+.video iframe{
+  width:100%;
+  height:240px;
+  margin-bottom:20px;
+  border:none;
+}
+
+/* IG STYLE CARDS (SAFE REPLACEMENT FOR EMBEDS) */
+.ig-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+
+.ig-card{
+  background:#111;
+  border:1px solid #222;
+  padding:20px;
+  transition:.3s;
+}
+
+.ig-card:hover{
+  border-color:#e10600;
+  transform:translateY(-4px);
+}
+
+.ig-card a{
+  color:#e10600;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* GUESTS */
+.guest{
+  background:rgba(0,0,0,0.6);
+  border:1px solid #222;
+  padding:20px;
+  margin-bottom:10px;
+}
+
+@media(max-width:600px){
+  .hero h1{font-size:2.8rem;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+<div class="overlay"></div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>BEATKONDUCTAZ</h1>
+  <h2>GOLDEN ERA</h2>
+  <p>Sunday June 21 • 12PM – 6PM</p>
+</div>
+
+<!-- EVENT -->
+<div class="section">
+  <div class="title">EVENT</div>
+  <div class="event">
+    📍 Wishing Wellness Cannabis Dispensary<br>
+    406 5th St NW, Washington DC<br><br>
+    Indoor / Outdoor Producer Showcase<br>
+    Beats • Culture • Community
+  </div>
+</div>
+
+<!-- PRODUCERS -->
+<div class="section">
+  <div class="title">PRODUCERS SHOWCASE</div>
+  <div class="grid">
+    <div class="card">1st Spawned</div>
+    <div class="card">Theory</div>
+    <div class="card">Mental Da God</div>
+    <div class="card">Krayola</div>
+    <div class="card">Grussle</div>
+    <div class="card">Choppy Chop</div>
+    <div class="card">Slim Kat</div>
+    <div class="card">DJ R.B.I.</div>
+  </div>
+</div>
+
+<!-- GUESTS -->
+<div class="section">
+  <div class="title">SPECIAL GUESTS</div>
+
+  <div class="guest">Toney Smith — @james_dewitt_yancey_foundation</div>
+  <div class="guest">Live Art — Scene @sceneism7art</div>
+  <div class="guest">Host — Brother Los @losthehost19</div>
+</div>
+
+<!-- MEDIA -->
+<div class="section">
+  <div class="title">BEATKONDUCTAZ TV</div>
+
+  <div class="video">
+    <iframe src="https://www.youtube.com/embed/F_1FEujN3VY" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/qOBSDU4J4rM" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/kCmhVy60fO8" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- IG LINKS -->
+<div class="section">
+  <div class="title">INSTAGRAM REELS</div>
+
+  <div class="ig-grid">
+    <div class="ig-card"><a href="https://www.instagram.com/reel/DX4SeSlOU2F/">Open Reel 1</a></div>
+    <div class="ig-card"><a href="https://www.instagram.com/reel/ClEmiYrJpA4/">Open Reel 2</a></div>
+    <div class="ig-card"><a href="https://www.instagram.com/reel/Ck_7_1rs2tp/">Open Reel 3</a></div>
+    <div class="ig-card"><a href="https://www.instagram.com/reel/ClPjz18MbCw/">Open Reel 4</a></div>
+  </div>
+</div>
+
+</body>
+</html>
