@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>BEATKONDUCTAZ | Golden Era</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #fff;
+      background: url('https://images.unsplash.com/photo-1511379938547-c1f69419868d') center/cover fixed;
+      background-color: #000;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: -1;
+    }
+
+    :root {
+      --red: #e10600;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      background: rgba(0,0,0,0.9);
+      border-bottom: 1px solid var(--red);
+      z-index: 10;
+    }
+
+    .logo h1 {
+      font-family: 'Oswald';
+      color: var(--red);
+      letter-spacing: 2px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 120px 20px 80px;
+    }
+
+    .hero h1 {
+      font-family: 'Oswald';
+      font-size: 4rem;
+      color: #fff;
+    }
+
+    .hero h2 {
+      color: var(--red);
+      margin-top: 10px;
+      font-size: 1.8rem;
+    }
+
+    .hero p {
+      margin-top: 20px;
+      background: rgba(0,0,0,0.6);
+      display: inline-block;
+      padding: 10px 20px;
+      border-left: 4px solid var(--red);
+    }
+
+    .section-title {
+      font-size: 2rem;
+      border-left: 5px solid var(--red);
+      padding-left: 15px;
+      margin: 40px 0 20px;
+    }
+
+    .lineup-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: rgba(20,20,20,0.9);
+      padding: 20px;
+      text-align: center;
+      border: 1px solid #222;
+    }
+
+    .card:hover {
+      border-color: var(--red);
+    }
+
+    .event-block {
+      border: 1px solid var(--red);
+      padding: 20px;
+      margin-top: 30px;
+      background: rgba(0,0,0,0.7);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .video-card iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+    }
+
+    .contact {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #222;
+    }
+
+    a { color: var(--red); }
+  </style>
+</head>
+
+<body>
+
+<div class="top-nav">
+  <div class="logo"><h1>BEATKONDUCTAZ</h1></div>
+  <div class="nav-links">
+    <a href="#lineup">LINEUP</a>
+    <a href="#media">MEDIA</a>
+    <a href="#event">EVENT</a>
+  </div>
+</div>
+
+<section class="hero">
+  <h1>BEATKONDUCTAZ</h1>
+  <h2>GOLDEN ERA</h2>
+  <p>SUNDAY AFTERNOON | JUNE 21 | 12–6PM</p>
+</section>
+
+<div class="container" id="event">
+  <div class="event-block">
+    <p><strong>📍 Wishing Wellness Cannabis Dispensary</strong><br>
+    406 5th St NW, Washington DC</p>
+    <p>Indoor / Outdoor Producer Showcase</p>
+    <p>Beats • Culture • Community</p>
+  </div>
+</div>
+
+<div class="container" id="lineup">
+  <h2 class="section-title">THE KONDUCTAZ</h2>
+
+  <div class="lineup-grid">
+    <div class="card">1st Spawned</div>
+    <div class="card">Theory</div>
+    <div class="card">Mental Da God</div>
+    <div class="card">Krayola</div>
+    <div class="card">Grussle</div>
+    <div class="card">Choppy Chop</div>
+    <div class="card">Slim Kat</div>
+    <div class="card">DJ R.B.I.</div>
+  </div>
+</div>
+
+<div class="container">
+  <h2 class="section-title">SPECIAL APPEARANCES</h2>
+
+  <div class="event-block">
+    <p><strong>Toney Smith</strong> @james_dewitt_yancey_foundation</p>
+    <p>Live Art by Scene @sceneism7art</p>
+    <p>Hosted by Brother Los @losthehost19</p>
+  </div>
+</div>
+
+<div class="container" id="media">
+  <h2 class="section-title">BEATKONDUCTAZ TV</h2>
+
+  <div class="video-grid">
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/F_1FEujN3VY"></iframe>
+    </div>
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/Z7JIi6rD8NE"></iframe>
+    </div>
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/sUZt_B9tibI"></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="container contact">
+  <p>@beatkonductaz</p>
+  <p>Beatkonductaz@gmail.com</p>
+</div>
+
+<div class="footer">
+  <p><strong>BEATKONDUCTAZ — GOLDEN ERA</strong></p>
+  <p>Beats • Culture • Community</p>
+  <p>406 5th St NW, Washington DC</p>
+</div>
+
+</body>
+</html>
