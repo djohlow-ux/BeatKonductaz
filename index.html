@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>The Rich Flip | BeatKonductaz | Macon, GA | August 15, 2026</title>
+  <meta name="description" content="The Rich Flip — A Little Richard Beat Battle & Art Experience in Macon, Georgia. Presented by BeatKonductaz. August 15, 2026." />
+  <meta name="theme-color" content="#0B0B0B" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Rich Flip | BeatKonductaz" />
+  <meta property="og:description" content="A Little Richard Beat Battle & Art Experience in Macon, GA." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --black:#0B0B0B;
+      --red:#D6282F;
+      --gold:#E6B44A;
+      --cream:#F4EFE6;
+      --muted:rgba(244,239,230,.7);
+      --panel:#14100C;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      background:var(--black);
+      color:var(--cream);
+      font-family:Inter,sans-serif;
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    /* TOP BAR */
+    .ticker{
+      position:fixed;top:0;left:0;width:100%;
+      background:var(--red);
+      height:34px;display:flex;align-items:center;
+      z-index:999;
+    }
+    .ticker span{
+      white-space:nowrap;
+      animation:move 30s linear infinite;
+      padding-left:100%;
+      font-size:12px;
+      font-family:"Courier Prime",monospace;
+    }
+    @keyframes move{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
+
+    /* NAV */
+    nav{
+      position:fixed;top:34px;width:100%;
+      display:flex;justify-content:space-between;
+      padding:14px 32px;
+      background:rgba(0,0,0,.7);
+      backdrop-filter:blur(12px);
+      z-index:998;
+    }
+    nav a{color:var(--cream);text-decoration:none;font-size:12px;letter-spacing:.12em}
+
+    /* HERO */
+    header{
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding-top:100px;
+      position:relative;
+    }
+
+    .hero h1{
+      font-family:"Bebas Neue";
+      font-size:clamp(70px,12vw,160px);
+      letter-spacing:.02em;
+    }
+
+    .hero h1 span{color:var(--red)}
+    .hero p{color:var(--muted);margin-top:10px}
+
+    .btn{
+      display:inline-block;
+      margin-top:20px;
+      padding:14px 28px;
+      background:var(--red);
+      color:white;
+      text-decoration:none;
+      font-weight:700;
+      letter-spacing:.1em;
+      font-size:12px;
+    }
+
+    section{
+      padding:100px 24px;
+      max-width:1100px;
+      margin:auto;
+    }
+
+    h2{
+      font-family:"Bebas Neue";
+      font-size:64px;
+      margin-bottom:20px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:20px;
+    }
+
+    .card{
+      background:var(--panel);
+      padding:24px;
+      border-left:3px solid var(--red);
+    }
+
+    footer{
+      padding:40px;
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,.1);
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    @media(max-width:768px){
+      nav{flex-direction:column;gap:10px}
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ticker -->
+<div class="ticker">
+  <span>The Rich Flip • Macon GA • August 15, 2026 • BeatKonductaz • Little Richard Beat Battle • Live Art • Producers Showcase •</span>
+</div>
+
+<!-- nav -->
+<nav>
+  <a href="#">BeatKonductaz</a>
+  <div>
+    <a href="#about">ABOUT</a> |
+    <a href="#lineup">LINEUP</a> |
+    <a href="#press">PRESS</a>
+  </div>
+</nav>
+
+<!-- hero -->
+<header>
+  <div class="hero">
+    <h1>The <span>Rich</span> Flip</h1>
+    <p>A Little Richard Beat Battle & Art Experience</p>
+    <p>August 15, 2026 • Macon, Georgia</p>
+    <a class="btn" href="#press">DOWNLOAD PRESS KIT</a>
+  </div>
+</header>
+
+<!-- about -->
+<section id="about">
+  <h2>ABOUT</h2>
+  <p>
+    The Rich Flip is a cultural bridge between Little Richard’s legacy and modern hip-hop production.
+    Producers flip his catalog live in a competitive showcase rooted in Macon’s musical history.
+  </p>
+</section>
+
+<!-- lineup -->
+<section id="lineup">
+  <h2>FEATURED</h2>
+  <div class="grid">
+    <div class="card">Ma Dukes</div>
+    <div class="card">Shawn J Period</div>
+    <div class="card">Boca Floja</div>
+    <div class="card">BeatKonductaz</div>
+  </div>
+</section>
+
+<!-- press -->
+<section id="press">
+  <h2>PRESS KIT</h2>
+  <div class="grid">
+    <div class="card">Press Release (PDF)</div>
+    <div class="card">Logos & Assets</div>
+    <div class="card">Photos</div>
+    <div class="card">Media Contact</div>
+  </div>
+</section>
+
+<footer>
+  © 2026 BeatKonductaz • The Rich Flip • Macon, GA
+</footer>
+
+</body>
+</html>
