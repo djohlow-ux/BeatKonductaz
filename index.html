@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>The Rich Flip | BeatKonductaz | Macon, GA | August 15, 2026</title>
+
+<meta name="description" content="The Rich Flip — A Little Richard Beat Battle & Art Experience in Macon, Georgia. Presented by BeatKonductaz. August 15, 2026." />
+<meta name="theme-color" content="#0B0B0B" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --black:#0B0B0B;
+  --warm:#14100C;
+  --mahogany:#241912;
+  --red:#D6282F;
+  --gold:#E6B44A;
+  --cream:#F4EFE6;
+  --muted:rgba(244,239,230,.72);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+html{scroll-behavior:smooth;}
+
+body{
+  background:var(--black);
+  color:var(--cream);
+  font-family:Inter, sans-serif;
+  overflow-x:hidden;
+}
+
+/* ===== TICKER ===== */
+.ticker{
+  position:fixed;
+  top:0;
+  width:100%;
+  height:36px;
+  display:flex;
+  z-index:9999;
+  background:var(--red);
+}
+
+.ticker-label{
+  background:var(--black);
+  color:var(--gold);
+  font:700 10px "Courier Prime";
+  display:flex;
+  align-items:center;
+  padding:0 16px;
+  border-right:2px solid var(--gold);
+}
+
+.ticker-track{
+  display:flex;
+  white-space:nowrap;
+  animation:scroll 45s linear infinite;
+  align-items:center;
+}
+
+.ticker-track span{
+  font:700 11px "Courier Prime";
+  padding:0 40px;
+  color:var(--cream);
+}
+
+@keyframes scroll{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
+}
+
+/* ===== NAV ===== */
+nav{
+  position:fixed;
+  top:36px;
+  width:100%;
+  height:64px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 40px;
+  background:rgba(11,11,11,.92);
+  backdrop-filter:blur(14px);
+  z-index:9998;
+  border-bottom:1px solid rgba(214,40,47,.2);
+}
+
+.logo{
+  font-family:"Bebas Neue";
+  font-size:22px;
+  letter-spacing:.12em;
+}
+
+.logo span{color:var(--red);}
+
+.nav a{
+  color:var(--muted);
+  text-decoration:none;
+  font-size:11px;
+  text-transform:uppercase;
+  margin-left:18px;
+}
+
+.nav a.active{color:var(--gold);}
+
+.cta{
+  background:var(--red);
+  padding:10px 18px;
+  color:white !important;
+}
+
+/* ===== HERO ===== */
+#hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding-top:120px;
+}
+
+.hero-title{
+  font-family:"Bebas Neue";
+  font-size:clamp(64px,12vw,150px);
+}
+
+.hero-title .rich{color:var(--red);}
+
+.hero-sub{
+  font:400 14px "Courier Prime";
+  letter-spacing:.2em;
+  color:var(--muted);
+  margin-top:10px;
+}
+
+.hero-date{
+  font:700 32px "Bebas Neue";
+  color:var(--gold);
+  margin-top:10px;
+}
+
+/* ===== SECTIONS ===== */
+section{
+  padding:110px 40px;
+}
+
+.section-alt{
+  background:var(--warm);
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+}
+
+h2{
+  font-family:"Bebas Neue";
+  font-size:clamp(42px,6vw,90px);
+  margin-bottom:30px;
+}
+
+/* ===== GRID FIX ===== */
+.grid{
+  display:grid;
+  gap:24px;
+}
+
+/* ===== EXPERIENCE CARDS ===== */
+.card{
+  background:var(--mahogany);
+  padding:28px;
+  cursor:pointer;
+  border:1px solid transparent;
+  transition:.3s;
+}
+
+.card:hover{
+  border-color:var(--red);
+}
+
+.card p{
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  transition:.4s;
+}
+
+.card.open p{
+  max-height:160px;
+  opacity:1;
+}
+
+/* ===== FADE ===== */
+.fade{
+  opacity:0;
+  transform:translateY(24px);
+  transition:.8s ease;
+}
+
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ===== RESPONSIVE FIX ===== */
+@media(max-width:768px){
+  nav{padding:0 20px;}
+  section{padding:80px 20px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-label">BREAKING</div>
+  <div class="ticker-track">
+    <span>The Rich Flip — Aug 15, 2026 — Macon, GA</span>
+    <span>Little Richard Beat Battle Experience</span>
+    <span>BeatKonductaz Presents</span>
+    <span>Live Art • DJs • Producers • Culture</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Beat<span>Konductaz</span></div>
+  <div class="nav">
+    <a href="#about">About</a>
+    <a href="#timeline">Legacy</a>
+    <a href="#experience">Experience</a>
+    <a href="#guests">Guests</a>
+    <a href="#contact">Contact</a>
+    <a class="cta" href="#press">Press Kit</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div>
+    <div class="hero-title fade">The <span class="rich">Rich</span> Flip</div>
+    <div class="hero-sub fade">A Little Richard Beat Battle & Art Experience</div>
+    <div class="hero-date fade">August 15, 2026 • Macon, GA</div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <h2 class="fade">About</h2>
+    <p class="fade">
+      The Rich Flip connects Little Richard’s legacy to modern hip-hop production culture through live beat battles, art, and performance in Macon, Georgia.
+    </p>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section-alt">
+  <div class="container">
+    <h2 class="fade">Experience</h2>
+
+    <div class="grid">
+      <div class="card fade" onclick="toggle(this)">
+        <h3>Producer Battle</h3>
+        <p>Live flipping of Little Richard samples judged in real time.</p>
+      </div>
+
+      <div class="card fade" onclick="toggle(this)">
+        <h3>Live Art</h3>
+        <p>Artists create work inspired by the sound of the night.</p>
+      </div>
+
+      <div class="card fade" onclick="toggle(this)">
+        <h3>DJ Sets</h3>
+        <p>From rock & roll roots to hip-hop evolution.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUESTS -->
+<section id="guests">
+  <div class="container">
+    <h2 class="fade">Guests</h2>
+    <p class="fade">Ma Dukes • Shawn J Period • Boca Floja • BeatKonductaz</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section-alt">
+  <div class="container">
+    <h2 class="fade">Contact</h2>
+    <p class="fade">onbeat@beatkonductaz.com</p>
+  </div>
+</section>
+
+<!-- SCRIPT FIX -->
+<script>
+
+function toggle(el){
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('open'));
+  el.classList.toggle('open');
+}
+
+/* fade fix */
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('show');
+    }
+  });
+},{threshold:0.15});
+
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+
+/* nav fix (no inline style conflicts) */
+const sections = document.querySelectorAll("section");
+const links = document.querySelectorAll(".nav a");
+
+window.addEventListener("scroll",()=>{
+  let current="";
+  sections.forEach(sec=>{
+    if(scrollY >= sec.offsetTop - 160){
+      current = sec.id;
+    }
+  });
+
+  links.forEach(a=>{
+    a.classList.toggle("active", a.getAttribute("href")==="#"+current);
+  });
+});
+
+</script>
+
+</body>
+</html>
